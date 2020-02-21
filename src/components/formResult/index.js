@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { arrayOf, shape, string } from 'prop-types'
 import { Wrapper } from '../styles'
 
-const FormResult = ({ data }) => {
+export const FormResult = ({ data }) => {
   const sortArrayById = arr => {
     return [...arr].sort((a, b) => {
       return parseInt(a.id) - parseInt(b.id)

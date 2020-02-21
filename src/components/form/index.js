@@ -6,7 +6,7 @@ import { Creators as FormCreators } from '../../actions/form'
 import Input from '../input'
 import { Wrapper } from '../styles'
 
-const Form = ({ saveForm, saveField }) => {
+export const Form = ({ saveForm, saveField }) => {
   const [textArray, setTextArray] = useState([])
 
   const handleText = (e, textId) => {
