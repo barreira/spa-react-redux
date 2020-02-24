@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { initialState } from '../../../reducers/user'
 import { UserResult } from '../../userResult'
+import { mapStateToProps } from '../../userResult'
 
 describe('UserResult component', () => {
   let wrapper, userProp, h5s
@@ -39,5 +40,31 @@ describe('UserResult component', () => {
     const text = `Age: ${userProp.age}`
 
     expect(h5s.at(1).text()).toMatch(text)
+  })
+
+  describe('#mapStateToProps', () => {
+    let state
+
+    beforeEach(() => {
+      state = {
+        user: {
+          firstName: 'João',
+          lastName: 'Barreira',
+          age: '23'
+        }
+      }
+    })
+
+    it('should return state with timer', () => {
+      expect(mapStateToProps(state).user.firstName).toEqual(
+        state.user.firstName
+      )
+    })
+    it('should return state with text', () => {
+      expect(mapStateToProps(state).user.lastName).toEqual(state.user.lastName)
+    })
+    it('should return state with score', () => {
+      expect(mapStateToProps(state).user.age).toEqual(state.user.age)
+    })
   })
 })
