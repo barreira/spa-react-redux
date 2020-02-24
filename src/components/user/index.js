@@ -75,7 +75,7 @@ export const User = ({ saveUser }) => {
   )
 }
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({ ...UserCreators }, dispatch)
 
 User.propTypes = {
