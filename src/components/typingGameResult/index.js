@@ -7,7 +7,7 @@ export const TypingGameResult = ({ score, hasStarted }) => (
   <Wrapper>{hasStarted && <h5>{`Score: ${score}`}</h5>}</Wrapper>
 )
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     score: state.typingGame.score,
     hasStarted: state.typingGame.hasStarted
