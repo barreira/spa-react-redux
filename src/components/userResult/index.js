@@ -10,7 +10,7 @@ export const UserResult = ({ user }) => (
   </Wrapper>
 )
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     user: {
       firstName: state.user.firstName,
