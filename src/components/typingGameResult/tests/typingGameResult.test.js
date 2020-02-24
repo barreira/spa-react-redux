@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { TypingGameResult } from '../../typingGameResult'
+import { mapStateToProps } from '../../typingGameResult'
 
 describe('TypingGameResult component', () => {
   let wrapper, props
@@ -44,6 +45,30 @@ describe('TypingGameResult component', () => {
 
       expect(h5.exists()).toBe(true)
       expect(h5.text()).toMatch(text)
+    })
+  })
+
+  describe('#mapStateToProps', () => {
+    let state
+
+    beforeEach(() => {
+      state = {
+        typingGame: {
+          timer: 10,
+          text: '',
+          score: 0,
+          hasStarted: false
+        }
+      }
+    })
+
+    it('should return state with score', () => {
+      expect(mapStateToProps(state).score).toEqual(state.typingGame.score)
+    })
+    it('should return state with hasStarted', () => {
+      expect(mapStateToProps(state).hasStarted).toEqual(
+        state.typingGame.hasStarted
+      )
     })
   })
 })
