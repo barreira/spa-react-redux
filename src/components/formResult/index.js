@@ -19,7 +19,7 @@ export const FormResult = ({ data }) => {
   )
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     data: state.form.data
   }
