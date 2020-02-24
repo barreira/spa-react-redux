@@ -2,6 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { Form } from '../../form'
 import Input from '../../input'
+import { mapDispatchToProps } from '../../form'
+import { Creators as FormCreators } from '../../../actions/form'
 
 describe('Form component', () => {
   let wrapper
@@ -30,5 +32,23 @@ describe('Form component', () => {
     const button = wrapper.find('button')
 
     expect(button.exists()).toBe(true)
+  })
+
+  describe('#mapDispatchToProps', () => {
+    let dispatch, props
+
+    beforeEach(() => {
+      dispatch = jest.fn()
+      props = mapDispatchToProps(dispatch)
+    })
+
+    it('should dispatch saveForm', () => {
+      props.saveForm()
+      expect(dispatch).toHaveBeenCalledWith(FormCreators.saveForm())
+    })
+    it('should dispatch saveField', () => {
+      props.saveField()
+      expect(dispatch).toHaveBeenCalledWith(FormCreators.saveField())
+    })
   })
 })
