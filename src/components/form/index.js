@@ -51,13 +51,13 @@ export const Form = ({ saveForm, saveField }) => {
         onChange={e => handleText(e, '3')}
         onClick={() => handleSubmitField('3')}
       />
-      <br></br>
+      <br />
       <button onClick={handleSubmitAll}>Submit all</button>
     </Wrapper>
   )
 }
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({ ...FormCreators }, dispatch)
 
 Form.propTypes = {
