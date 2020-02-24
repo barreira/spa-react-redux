@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { initialState } from '../../../reducers/form'
 import { FormResult } from '../../formResult'
+import { mapStateToProps } from '../../formResult'
 
 describe('FormResult component', () => {
   let wrapper, state
@@ -55,6 +56,47 @@ describe('FormResult component', () => {
 
         expect(h4text).toMatch(state.data[i].text)
       }
+    })
+  })
+
+  describe('#mapStateToProps', () => {
+    let state
+
+    beforeEach(() => {
+      state = {
+        form: {
+          data: [
+            {
+              id: '1',
+              text: 'This is a text'
+            },
+            {
+              id: '2',
+              text: 'This is another text'
+            }
+          ]
+        }
+      }
+    })
+
+    it('should return state with data and its two elements', () => {
+      expect(mapStateToProps(state).data).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            id: state.form.data[0].id,
+            text: state.form.data[0].text
+          })
+        ])
+      )
+
+      expect(mapStateToProps(state).data).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            id: state.form.data[1].id,
+            text: state.form.data[1].text
+          })
+        ])
+      )
     })
   })
 })
