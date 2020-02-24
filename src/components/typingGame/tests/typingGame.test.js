@@ -253,31 +253,32 @@ describe('FormResult component', () => {
   })
 
   describe('#mapDispatchToProps', () => {
-    let dispach
-    let props
+    let dispatch, props
+
     beforeEach(() => {
-      dispach = jest.fn()
-      props = mapDispatchToProps(dispach)
+      dispatch = jest.fn()
+      props = mapDispatchToProps(dispatch)
     })
-    test('dispatch decrementTimer', () => {
+
+    it('should dispatch decrementTimer', () => {
       props.decrementTimer()
-      expect(dispach).toHaveBeenCalledWith(TypingGameCreators.decrementTimer())
+      expect(dispatch).toHaveBeenCalledWith(TypingGameCreators.decrementTimer())
     })
-    test('dispatch saveText', () => {
+    it('should dispatch saveText', () => {
       props.saveText()
-      expect(dispach).toHaveBeenCalledWith(TypingGameCreators.saveText())
+      expect(dispatch).toHaveBeenCalledWith(TypingGameCreators.saveText())
     })
-    test('dispatch saveScore', () => {
+    it('should dispatch saveScore', () => {
       props.saveScore()
-      expect(dispach).toHaveBeenCalledWith(TypingGameCreators.saveScore())
+      expect(dispatch).toHaveBeenCalledWith(TypingGameCreators.saveScore())
     })
-    test('dispatch setStarted', () => {
+    it('should dispatch setStarted', () => {
       props.setStarted()
-      expect(dispach).toHaveBeenCalledWith(TypingGameCreators.setStarted())
+      expect(dispatch).toHaveBeenCalledWith(TypingGameCreators.setStarted())
     })
-    test('dispatch restart', () => {
+    it('should dispatch restart', () => {
       props.restart()
-      expect(dispach).toHaveBeenCalledWith(TypingGameCreators.restart())
+      expect(dispatch).toHaveBeenCalledWith(TypingGameCreators.restart())
     })
   })
 
@@ -298,19 +299,19 @@ describe('FormResult component', () => {
       }
     })
 
-    test('should return state with timer ', () => {
+    it('should return state with timer', () => {
       expect(mapStateToProps(state).timer).toEqual(1)
     })
-    test('should return state with text ', () => {
+    it('should return state with text', () => {
       expect(mapStateToProps(state).text).toEqual('some_text')
     })
-    test('should return state with score ', () => {
+    it('should return state with score', () => {
       expect(mapStateToProps(state).score).toEqual(10)
     })
-    test('should return state with hasStarted ', () => {
+    it('should return state with hasStarted', () => {
       expect(mapStateToProps(state).hasStarted).toEqual(true)
     })
-    test('should return state with firstName ', () => {
+    it('should return state with firstName', () => {
       expect(mapStateToProps(state).userName).toEqual('some_firstName')
     })
   })
