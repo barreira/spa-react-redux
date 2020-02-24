@@ -103,7 +103,7 @@ export const TypingGame = ({
   )
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     timer: state.typingGame.timer,
     text: state.typingGame.text,
@@ -113,7 +113,7 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({ ...TypingGameCreators }, dispatch)
 
 TypingGame.propTypes = {
