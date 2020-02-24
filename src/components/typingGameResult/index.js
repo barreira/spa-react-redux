@@ -3,14 +3,8 @@ import { connect } from 'react-redux'
 import { bool, number } from 'prop-types'
 import { Wrapper } from '../styles'
 
-const TypingGameResult = ({ score, hasStarted }) => (
-  <>
-    {hasStarted && (
-      <Wrapper>
-        <h5>{`Score: ${score}`}</h5>
-      </Wrapper>
-    )}
-  </>
+export const TypingGameResult = ({ score, hasStarted }) => (
+  <Wrapper>{hasStarted && <h5>{`Score: ${score}`}</h5>}</Wrapper>
 )
 
 const mapStateToProps = state => {

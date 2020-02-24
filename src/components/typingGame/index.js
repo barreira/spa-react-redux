@@ -6,7 +6,7 @@ import { Creators as TypingGameCreators } from '../../actions/typingGame'
 import { SAMPLE_TEXT } from '../../constants'
 import { Wrapper } from '../styles'
 
-const TypingGame = ({
+export const TypingGame = ({
   timer,
   text,
   score,
@@ -96,7 +96,7 @@ const TypingGame = ({
         cols={35}
         onChange={e => handleTextArea(e)}
         onKeyUp={handleKeyUp}
-      ></textarea>
+      />
       <h3>{`You have ${timer} seconds`}</h3>
       {timer === 0 && endGame()}
     </Wrapper>

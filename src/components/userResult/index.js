@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { shape, string } from 'prop-types'
 import { Wrapper } from '../styles'
 
-const UserResult = ({ user }) => (
+export const UserResult = ({ user }) => (
   <Wrapper>
     <h5>{`Name: ${user.firstName} ${user.lastName}`}</h5>
     <h5>{`Age: ${user.age}`}</h5>

@@ -6,7 +6,7 @@ import { Creators as UserCreators } from '../../actions/user'
 import Input from '../input'
 import { Wrapper } from '../styles'
 
-const User = ({ saveUser }) => {
+export const User = ({ saveUser }) => {
   const [user, setUser] = useState()
 
   const handleUser = (e, field) => {

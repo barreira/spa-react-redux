@@ -1,10 +1,10 @@
 import React from 'react'
 import { func, string } from 'prop-types'
 
-const Input = ({ title, onChange, onBlur, onClick }) => (
+export const Input = ({ title, onChange, onBlur, onClick }) => (
   <>
     <h3>{title}</h3>
-    <input type="text" onChange={onChange} onBlur={onBlur}></input>
+    <input type="text" onChange={onChange} onBlur={onBlur} />
     <button onClick={onClick}>Submit</button>
   </>
 )
