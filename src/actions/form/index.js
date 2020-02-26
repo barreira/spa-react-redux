@@ -8,8 +8,8 @@ export const Creators = {
     type: Types.SAVE_FORM,
     payload: { data }
   }),
-  saveField: data => ({
+  saveField: field => ({
     type: Types.SAVE_FIELD,
-    payload: { data }
+    payload: { field }
   })
 }
