@@ -13,15 +13,15 @@ export const formReducer = (state = initialState, action) => {
     }
     case Types.SAVE_FIELD: {
       const filteredData = state.data.filter(
-        obj => obj.id !== action.payload.data.id
+        obj => obj.id !== action.payload.field.id
       )
 
       return {
         data: [
           ...filteredData,
           {
-            id: action.payload.data.id,
-            text: action.payload.data.text
+            id: action.payload.field.id,
+            text: action.payload.field.text
           }
         ]
       }
