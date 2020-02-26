@@ -55,15 +55,15 @@ describe('UserResult component', () => {
       }
     })
 
-    it('should return state with timer', () => {
+    it("should return state with the user's firstName", () => {
       expect(mapStateToProps(state).user.firstName).toEqual(
         state.user.firstName
       )
     })
-    it('should return state with text', () => {
+    it("should return state with the user's lastName", () => {
       expect(mapStateToProps(state).user.lastName).toEqual(state.user.lastName)
     })
-    it('should return state with score', () => {
+    it("should return state with the user's age", () => {
       expect(mapStateToProps(state).user.age).toEqual(state.user.age)
     })
   })
