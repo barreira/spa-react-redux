@@ -1,7 +1,7 @@
 import { initialState, userReducer } from '../../user'
 
 describe('initialState', () => {
-  it('should set the initial state ', () => {
+  it('should set the initial state', () => {
     expect(initialState).toEqual({
       firstName: '',
       lastName: '',
