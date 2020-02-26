@@ -1,4 +1,4 @@
-import { Types, Creators } from '../index'
+import { Types, Creators } from '../../user'
 
 describe('Types', () => {
   it('should export the expected action types', () => {

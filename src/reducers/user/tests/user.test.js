@@ -1,4 +1,4 @@
-import { initialState, userReducer } from '../index'
+import { initialState, userReducer } from '../../user'
 
 describe('initialState', () => {
   test('should set the initial state ', () => {
@@ -21,6 +21,7 @@ describe('Reducers', () => {
           }
         }
       }
+
       expect(userReducer(initialState, action)).toEqual({
         ...initialState,
         ...action.user
